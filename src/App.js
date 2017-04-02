@@ -1,21 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import Home from './Home'
+import About from './About'
+import Gaming from './Gaming'
+import Studio from './Studio'
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
 
-export default App;
+const Links = () => (
+  <nav>
+    <ul>
+      <li><NavLink exact activeClassName="active" to='/'>Home</NavLink></li>
+      <li><NavLink to='About'>About</NavLink></li>
+      <li><NavLink to='Gaming'>Gaming</NavLink></li>
+      <li><NavLink to='Studio'>Studio</NavLink></li>
+    </ul>
+  </nav>
+)
+
+const App = () => (
+  <Router>
+    <div>
+      <Links />
+      <Route exact path='/' component={ Home } />
+      <Route path='/about' component={ About } />
+      <Route path='/gaming' component={ Gaming } />
+      <Route path='/studio' component={ Studio } />
+
+    </div>
+  </Router>
+)
+
+export default App
