@@ -7,9 +7,8 @@ class Navcustom extends Component {
       <nav>
         <ul>
           <li><NavLink exact to='/'>Home</NavLink></li>
+          <li><NavLink to='/store'>Store</NavLink></li>
           <li><NavLink to='/about'>About</NavLink></li>
-          <li><NavLink to='/gaming'>Gaming</NavLink></li>
-          <li><NavLink to='/studio'>Studio</NavLink></li>
         </ul>
       </nav>
     )
