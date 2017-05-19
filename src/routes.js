@@ -1,14 +1,12 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import React from 'react'
+import { Route } from 'react-router-dom'
 import App from './App';
 import Home from './Home'
 import About from './About'
 import Gaming from './Gaming'
 import Studio from './Studio'
 
-render(
-  <Router>
+const routes = (props) => (
     <div>
       <App />
       <Route exact path='/' component={ Home } />
@@ -16,6 +14,19 @@ render(
       <Route path='/gaming' component={ Gaming } />
       <Route path='/studio' component={ Studio } />
     </div>
-  </Router>,
-  document.getElementById('root')
-);
+)
+
+
+/*const routes = (props) => (
+
+  </Router>
+
+
+  <Router {...props}>
+    <Route path="/" component={ App }>
+      <Route path="/about" component={ About } />
+    </Route>
+  </Router>
+)*/
+
+export default routes
